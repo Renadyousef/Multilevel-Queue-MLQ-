@@ -7,3 +7,6 @@ in Q2. The multilevel queue-scheduling algorithm is implemented as a fixed preem
 for each and every queue. It is assumed that processes arrive at different times, so your scheduler must 
 support higher-priority processes preempting processes with lower priorities when process arrives at high 
 priority queue# Multilevel-Queue-MLQ-
+
+
+note:its a group project with my group mates
