@@ -1,113 +1,80 @@
 //class is used to represent the Process Control Block (PCB)
+
+
+
+package osproject;
+
 public class PCB {
-
-private int arival_time,strat_time,termination_time;
-
-private int turn_round,waiting_time,respons_time;
-
-private int process_priority,cpu_burst;//Priority of a process: from 1 to 2, where 1>2 in Priority
-
-private String process_id;
-
-
-
-    public PCB(int arival_time, int process_priority, int cpu_burst, String process_id) {
-        strat_time=0;
-        this.arival_time = arival_time;
-        this.process_priority = process_priority;
-        this.cpu_burst = cpu_burst;
-        this.process_id = process_id;
-        termination_time=0;
-        waiting_time=0;
-        respons_time=0;
-        turn_round=0;
-      
-    }
-    
-//Getters
-    public String get_ProcID(){
-       return process_id;
-   }
-   
-   public int get_ProcPriority(){
-       return process_priority;
-   }
-   
-     public int get_CPUburst(){
-       return cpu_burst;
-   }
-   
-    public int get_ArivalTime(){
-       return arival_time;
-   }
-   
-   public int get_StratTime(){
-       return strat_time;
-   }
-   
-    public int get_TerminationTime() {
-       return termination_time;
-   }
-   
-   public int get_TurnRound(){
-       return turn_round;
-   }
-   
-  public int get_WaitingTime(){
-       return waiting_time;
-   }
-   
-   public int get_ResponsTime(){
-       return respons_time;
-   }
-  
- 
-//Setters
-   
-   public void set_ProcID(String id){
-       process_id= id;
-   }
-   
-   public void set_ProcPriority(int priority){
-      process_priority= priority;
-   }
-   
-   public void  set_CPUburst(int burst){
-       cpu_burst=burst;
-   }
-   
-    public void set_ArivalTime(int arival){
-       arival_time=arival;
-   }
-   
-   public void set_StratTime(int start){
-       strat_time=start;
-   }
-   
-    public void set_TerminationTime(int term) {
-      termination_time=term;
-   }
-   
-   public void set_TurnRound(int turn){
-       turn_round=turn;
-   }
-   
-  public void set_WaitingTime(int wait){
-       waiting_time=wait;
-   }
-   
-   public void set_ResponsTime(int respons){
-       respons_time=respons;
-   }
-    
-   
-     @Override
-     public String toString() {
-     String formattedString = String.format("%-10s%-10d%-10d%-10d%-10d%-10d%-10d%-10d%-10d",
-                                           process_id,process_priority,cpu_burst,arival_time,
-                                           strat_time,termination_time,turn_round,
-                                           waiting_time,respons_time);
-    return formattedString;
-}
-
+    String process_ID;
+	int priority ,arrival_Time , new_arrivalTime ;
+	int stCpuBurst , cpu_Burst , start_Time ;
+	int terminationTime , turnaroundTime ;
+	int waitingTime , responseTime ;
+	
+	public PCB(String process_ID, int priority, int arrival_Time, int cpu_Burst) {
+	this.process_ID = process_ID;
+	this.priority = priority;
+	this.arrival_Time = arrival_Time;
+	this.new_arrivalTime = arrival_Time;
+	this.stCpuBurst = cpu_Burst; // original CPU burst
+	this.cpu_Burst = cpu_Burst;
+	this.start_Time = 0 ;
+	this.turnaroundTime = 0;
+	this.waitingTime = 0;
+	this.responseTime = 0;
+	}
+	public String getProcess_ID() {
+		return process_ID;
+	}
+	public void setProcess_ID(String process_ID) {
+		this.process_ID = process_ID;
+	}
+	public int getPriority() {
+		return priority;
+	}
+	public void setPriority(int priority) {
+		this.priority = priority;
+	}
+	public int getArrival_Time() {
+		return arrival_Time;
+	}
+	public void setArrival_Time(int arrival_Time) {
+		this.arrival_Time = arrival_Time;
+	}
+	public int getCpu_Burst() {
+		return cpu_Burst;
+	}
+	public void setCpu_Burst(int cpu_Burst) {
+		this.cpu_Burst = cpu_Burst;
+	}
+	public int getStart_Time() {
+		return start_Time;
+	}
+	public void setStart_Time(int start_Time) {
+		this.start_Time = start_Time;
+	}
+	public int getTerminationTime() {
+		return terminationTime;
+	}
+	public void setTerminationTime(int terminationTime) {
+		this.terminationTime = terminationTime;
+	}
+	public int getTurnaroundTime() {
+		return turnaroundTime;
+	}
+	public void setTurnaroundTime(int turnaroundTime) {
+		this.turnaroundTime = turnaroundTime;
+	}
+	public int getWaitingTime() {
+		return waitingTime;
+	}
+	public void setWaitingTime(int waitingTime) {
+		this.waitingTime = waitingTime;
+	}
+	public int getResponseTime() {
+		return responseTime;
+	}
+	public void setResponseTime(int responseTime) {
+		this.responseTime = responseTime;
+	}
 }
